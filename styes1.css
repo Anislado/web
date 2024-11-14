@@ -1,0 +1,71 @@
+body {
+    background: linear-gradient(to bottom, #F5EFD7, #F4F4F4); 
+    font-family: Arial, sans-serif;
+    background-image: url('img/tapiz.webp');
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+    
+  }
+
+  header .navbar-brand img {
+    max-width: 130px;
+  }
+
+  #navbarNav .nav-link {
+    color: #000 !important; 
+  }
+  
+  #navbarNav .nav-link:hover {
+    color: #555 !important; 
+  }
+  
+  .navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9); 
+  }
+
+  .text-center {
+    font-family: 'Updock', cursive;
+    text-align: center;
+    font-size: 3.5rem; 
+    font-weight: 500;  
+}
+
+.contenedor-boton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+}
+
+.contenedor-boton .btn {
+  margin-top: -600px;
+}
+
+
+.card {
+  width: 16rem;
+  margin: 10px auto;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.card-body {
+  padding: 8px;
+}
+
+.btn-agregar {
+  background-color: #28a745;
+  color: white;
+  border: none;
+}
+
+.btn-agregar:hover {
+  background-color: #218838;
+}

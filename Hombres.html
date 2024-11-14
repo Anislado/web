@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hombres</title>
+  <script src="https://kit.fontawesome.com/8a408b81dd.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Updock&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg" style="background-color: #DBCDA2;">
+    <a class="navbar-brand text-white" href="#"><img src="img/FINTELANaA.png" alt="Logotipo" width="190"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link text-white" href="Proyecto1.html">INICIO</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="file:///C:/Users/MARTIN/OneDrive/Desktop/ELENA2/Proyecto/Proyecto1.html#login">Iniciar Sesión/Registrarse</a></li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="carrito.html">🛒<span id="cantidadCarrito">0</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <h2 class="text-center">Productos para Hombres</h2>
+    <div class="row" id="productos">
+      <!-- Cards de productos de ejemplo -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="img/playera.jpeg" class="card-img-top" alt="Playera">
+          <div class="card-body">
+            <h5 class="card-title">Playera Casual</h5>
+            <p class="card-text">$250</p>
+            <button class="btn btn-agregar" onclick="agregarAlCarrito('Playera Casual', 250, 'img/playera.jpeg')">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="img/jeans.jpg" class="card-img-top" alt="Jeans">
+          <div class="card-body">
+            <h5 class="card-title">Jeans de Moda</h5>
+            <p class="card-text">$500</p>
+            <button class="btn btn-agregar" onclick="agregarAlCarrito('Jeans de Moda', 500, 'img/jeans.jpg')">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="img/chaqueta.jpg" class="card-img-top" alt="Chaqueta">
+          <div class="card-body">
+            <h5 class="card-title">Chaqueta de Cuero</h5>
+            <p class="card-text">$1200</p>
+            <button class="btn btn-agregar" onclick="agregarAlCarrito('Chaqueta de Cuero', 1200, 'img/chaqueta.jpg')">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Función para agregar productos al carrito
+    function agregarAlCarrito(nombre, precio, imagen) {
+      const producto = { nombre, precio, imagen, cantidad: 1 };
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+      const productoExistente = carrito.find(item => item.nombre === nombre);
+      if (productoExistente) {
+        productoExistente.cantidad++;
+      } else {
+        carrito.push(producto);
+      }
+
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      actualizarContadorCarrito();
+      alert('Producto agregado al carrito');
+    }
+
+    // Función para actualizar el contador del carrito
+    function actualizarContadorCarrito() {
+      const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      const cantidadTotal = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+      document.getElementById('cantidadCarrito').textContent = cantidadTotal;
+    }
+
+    // Actualizar el contador al cargar la página
+    window.onload = actualizarContadorCarrito;
+  </script>
+
+</body>
+</html>

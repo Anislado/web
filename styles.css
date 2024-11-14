@@ -1,0 +1,257 @@
+body {
+  background: linear-gradient(to bottom, #F5EFD7, #F4F4F4); 
+  font-family: Arial, sans-serif;
+  background-image: url('img/tapiz.webp');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+  
+}
+
+
+
+header .navbar-brand img {
+    max-width: 130px;
+  }
+
+  #navbarNav .nav-link {
+    color: #000 !important; 
+  }
+  
+  #navbarNav .nav-link:hover {
+    color: #555 !important; 
+  }
+  
+  .navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9); 
+  }
+  
+  .text-center.font-Updock {
+    font-family: 'Updock', sans-serif;
+    font-size: 3.5rem; 
+    font-weight: 500;  
+  }
+  
+  
+section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+#departamentos h2 {
+  font-family: 'Updock', sans-serif; 
+  font-size: 4rem;
+  font-weight: 500;
+}
+
+#departamentos .row > .col-md-4 {
+  margin-bottom: 1rem;
+}
+
+.carousel-inner {
+  display: flex;
+  align-items: center;
+}
+.carousel-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.container, .container-fluid {
+  max-width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+#departamentos .card {
+  width: 100%; 
+  max-width: 250px;
+  margin: 0 auto; 
+  height: 350px; 
+}
+
+
+#departamentos .card-img-top {
+  max-height: 150px;
+  object-fit: cover;
+}
+
+
+#departamentos .card-body {
+  font-size: 0.9rem;
+}
+
+
+#departamentos .card .btn {
+  font-size: 0.8rem;
+  padding: 5px 10px;
+}
+
+
+
+.card img {
+  object-fit: cover;
+}
+.card-body {
+  text-align: center;
+}
+
+
+@media (min-width: 768px) {
+ 
+  .row {
+    flex-wrap: wrap;
+  }
+
+  .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+p {
+  margin-top: 40px; 
+}
+
+#contacto h2 {
+  font-family: 'Updock', sans-serif; 
+  font-size: 4rem;
+  font-weight: 500;
+}
+
+#contacto p, #nosotros p {
+  margin-bottom: 0.5rem;
+}
+
+
+.contacto-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+
+.contacto-text p {
+  margin-bottom: 10px;
+}
+
+
+.map-iframe {
+  width: 100%;
+  height: 300px; 
+  border: 0;
+}
+
+
+@media (max-width: 767px) {
+  .contacto-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .map-iframe {
+    height: 250px;
+  }
+}
+
+#nosotros h2 {
+  font-family: 'Updock', sans-serif; 
+  font-size: 4rem;
+  font-weight: 500;
+}
+
+
+.pacifico-font {
+  font-family: 'Pacifico', cursive;
+}
+
+
+#nosotros .row {
+  display: flex;              
+  justify-content: center;    
+  align-items: center;        
+  text-align: center;         
+}
+
+#nosotros .row {
+  margin-top: 40px;  
+}
+
+.card-container {
+  display: flex;
+  gap: 30px;  
+  justify-content: center;  
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 200px; 
+  height: 320px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;  
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  width: 100%;
+  height: 160px;  
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;  
+}
+
+.card-content h3 {
+  font-size: 18px;
+  color: #333;
+  margin-top: 0;
+}
+
+.card-content p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 0;
+}
+
+.card-content button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+
+
+
+
+footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+footer .social-media a {
+  margin: 0 0.5rem;
+}
+
+

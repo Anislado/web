@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito de Compras</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Updock&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styes1.css">
+
+  <style>
+    .producto {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .producto img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg" style="background-color: #DBCDA2;">
+    <a class="navbar-brand text-white" href="#"><img src="img/FINTELANaA.png" alt="Logotipo" width="190"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link text-white" href="Proyecto1.html">INICIO</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="file:///C:/Users/MARTIN/OneDrive/Desktop/ELENA2/Proyecto/Proyecto1.html#login">Iniciar Sesión/Registrarse</a></li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="carrito.html">🛒<span id="cantidadCarrito">0</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <div class="container mt-5">
+    <h2 class="text-center">Carrito de Compras</h2>
+    <div id="carritoContenido" class="text-center mt-4">
+    </div>
+
+    <div id="productosCarrito"></div>
+    <p id="mensajeVacio" style="display:none;" class="text-center">Tu carrito está vacío</p>
+    <div class="contenedor-boton">
+      <a href="file:///C:/Users/MARTIN/OneDrive/Desktop/ELENA2/Proyecto/Proyecto1.html" class="btn btn-primary">Seguir comprando</a>
+    </div>
+  </div>
+
+  <script>
+    function mostrarCarrito() {
+      const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      const carritoContenido = document.getElementById('productosCarrito');
+      const mensajeVacio = document.getElementById('mensajeVacio');
+      carritoContenido.innerHTML = ''; 
+
+      if (carrito.length === 0) {
+        mensajeVacio.style.display = 'block';
+      } else {
+        mensajeVacio.style.display = 'none';
+        carrito.forEach((producto, index) => {
+          carritoContenido.innerHTML += `
+            <div class="producto">
+              <img src="${producto.imagen}" alt="${producto.nombre}">
+              <div>
+                <p><strong>${producto.nombre}</strong></p>
+                <p>$${producto.precio} x ${producto.cantidad}</p>
+              </div>
+              <button class="btn btn-danger" onclick="eliminarProducto(${index})">Eliminar</button>
+            </div>
+            <hr>
+          `;
+        });
+      }
+
+      actualizarContadorCarrito();
+    }
+
+    function actualizarContadorCarrito() {
+      const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      const totalCantidad = carrito.reduce((total, producto) => total + producto.cantidad, 0);
+      document.getElementById('cantidadCarrito').textContent = totalCantidad;
+    }
+
+    function eliminarProducto(index) {
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+      if (carrito[index].cantidad > 1) {
+        carrito[index].cantidad--;
+      } else {
+        carrito.splice(index, 1);
+      }
+
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+
+      mostrarCarrito();
+    }
+
+    window.onload = function() {
+      mostrarCarrito();
+    };
+  </script>
+
+</body>
+</html>

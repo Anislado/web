@@ -1,0 +1,60 @@
+body {
+    background: linear-gradient(to bottom, #F5EFD7, #F4F4F4); 
+    font-family: Arial, sans-serif;
+    background-image: url('img/tapiz.webp');
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+    
+  }
+
+  header .navbar-brand img {
+    max-width: 130px;
+  }
+
+  #navbarNav .nav-link {
+    color: #000 !important; 
+  }
+  
+  #navbarNav .nav-link:hover {
+    color: #555 !important; 
+  }
+  
+  .navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9); 
+  }
+  
+  
+#productos h2 {
+    font-family: 'Updock', sans-serif; 
+    font-size: 4rem;
+    font-weight: 500;
+  }
+
+  /* Ajustes para reducir el tamaño de las cards y cambiar el color del botón */
+.card {
+    width: 16rem; /* Ancho de la tarjeta */
+    margin: 10px auto;
+  }
+  
+  .card-img-top {
+    width: 100%; /* La imagen ocupa todo el ancho de la tarjeta */
+    height: 180px; /* Altura de la imagen ajustada */
+    object-fit: cover; /* Ajusta la imagen para que llene el espacio sin distorsión */
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
+  
+  .card-body {
+    padding: 8px; /* Reduce el padding del contenido de la tarjeta */
+  }
+  
+  .btn-agregar {
+    background-color: #28a745; /* Color verde del botón */
+    color: white;
+  }
+  
+  .btn-agregar:hover {
+    background-color: #218838; /* Color verde oscuro al pasar el mouse */
+  }
+  
